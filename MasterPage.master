@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Candles By Jared</title>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <asp:ContentPlaceHolder id="Header" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class ="menu">
+        <asp:Image ID ="Banner" runat ="server" AlternateText="Candles By Jared" ImageUrl = "~/Images/Banner.jpg" Width = "866px" Height = "199px" />
+        <asp:Menu ID="Menu1" runat="server" Orientation ="Horizontal" CssClass ="menu">
+            <Items>
+                <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/About.aspx" Text="About Us" Value="About Us"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="#" Text="Products" Value="Products">
+                    <asp:MenuItem NavigateUrl="~/Products.aspx?cat=Candles" Text="Candles" Value="Candles"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/Products.aspx?cat=Candle%20Warmers" Text="Candle Warmers" Value="New Item"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/Products.aspx?cat=Wax%20Melts" Text="Wax Melts" Value="Wax Melts"></asp:MenuItem>
+                </asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/ScentCreator.aspx" Text="Scent Creator" Value="Scent Creator"></asp:MenuItem>
+            </Items>
+        </asp:Menu>
+        <br />
+    </div>
+    <asp:ContentPlaceHolder id="body" runat="server"></asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
